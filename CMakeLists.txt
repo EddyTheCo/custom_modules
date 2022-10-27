@@ -11,7 +11,7 @@ include(FetchContent)
 add_library(custom_modules INTERFACE include/custom_modules.hpp)
 
 if(NOT CUSTOM_MODULES)
-	set(CUSTOM_MODULES "MPS;TTN" CACHE STRING "")
+	set(CUSTOM_MODULES "MPS" CACHE STRING "")
 	message(STATUS "CUSTOM_MODULES not set using default ${CUSTOM_MODULES}")
 endif(NOT CUSTOM_MODULES)
 
