@@ -11,18 +11,18 @@ include(FetchContent)
 add_library(custom_modules INTERFACE include/custom_modules.hpp)
 
 if(NOT CUSTOM_MODULES)
-	set(CUSTOM_MODULES "MPS" CACHE STRING "")
+	set(CUSTOM_MODULES "MPS" )
 	message(STATUS "CUSTOM_MODULES not set using default ${CUSTOM_MODULES}")
 endif(NOT CUSTOM_MODULES)
 
-foreach(module IN CUSTOM_MODULES)
+foreach(module CUSTOM_MODULES)
 	FetchContent_Declare(
 		${module}
 		GIT_REPOSITORY git@github.com:EddyTheCo/${module}.git
 		GIT_TAG main
 		)
 	FetchContent_MakeAvailable(${module})
-	target_compile_definitions(custom_modules USE_${module} INTERFACE USE_${module})
+	target_compile_definitions(custom_modules INTERFACE USE_${module})
 	target_link_libraries(custom_modules INTERFACE  ${module})
 endforeach()
 
