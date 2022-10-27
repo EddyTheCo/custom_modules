@@ -11,11 +11,13 @@ include(FetchContent)
 add_library(custom_modules INTERFACE include/custom_modules.hpp)
 
 if(NOT CUSTOM_MODULES)
-	set(CUSTOM_MODULES "MPS" )
+	set(CUSTOM_MODULES "MPS;TTN" )
 	message(STATUS "CUSTOM_MODULES not set using default ${CUSTOM_MODULES}")
 endif(NOT CUSTOM_MODULES)
 
-foreach(module CUSTOM_MODULES)
+foreach(module ${CUSTOM_MODULES})
+
+	message(STATUS "Loading module  ${module}")
 	FetchContent_Declare(
 		${module}
 		GIT_REPOSITORY git@github.com:EddyTheCo/${module}.git
