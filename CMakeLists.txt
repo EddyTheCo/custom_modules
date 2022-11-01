@@ -8,7 +8,7 @@ include(FetchContent)
 
 
 
-add_library(custom_modules INTERFACE include/custom_modules.hpp)
+add_library(custom_modules INTERFACE )
 if(NOT CUSTOM_MODULES)
 	set(CUSTOM_MODULES "DGAN" )
        message(STATUS "CUSTOM_MODULES not set using default ${CUSTOM_MODULES}")
