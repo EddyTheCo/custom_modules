@@ -10,3 +10,6 @@
 #ifdef USE_GGAN
 #include"custom-modules/ggan.hpp"
 #endif
+#ifdef USE_DNN_abbas
+#include"custom-modules/dnn_abbas.hpp"
+#endif
