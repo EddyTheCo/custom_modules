@@ -13,3 +13,6 @@
 #ifdef USE_DNN_abbas
 #include"custom-modules/dnn_abbas.hpp"
 #endif
+
+
+namespace custom_models{};
