@@ -16,6 +16,9 @@
 #ifdef USE_EQM_abbas
 #include"custom-modules/eqm_abbas.hpp"
 #endif
+#ifdef USE_QNN_abbas
+#include"custom-modules/qnn_abbas.hpp"
+#endif
 
 
 namespace custom_models{};
